@@ -89,11 +89,58 @@
       </header><!-- .entry-header -->
 
     <div class="entry-content">
-      
-        <p>I’m  Hai, from Hengshui, Hebei, a place famous for its rigorous education. It was on that land covered with countless exam papers that I grew into an introverted and sensitive person, yet always eager to do something for the world.<br>__</p>
+  
+    <div class="foldable-content" id="foldable-cmq1xtqgb0000jgugf23pfe2a">
+      <p>I’m  Hai, from Hengshui, Hebei, a place famous for its rigorous education. It was on that land covered with countless exam papers that I grew into an introverted and sensitive person, yet always eager to do something for the world.<br>__</p>
 
-      
-    </div><!-- .entry-content -->
+    </div>
+    
+    <script>
+      (function() {
+        var container = document.getElementById('foldable-cmq1xtqgb0000jgugf23pfe2a');
+        if (!container) return;
+        // 设置默认显示的最大高度（例如 300px，可自行调整）
+        var maxHeight = 300;
+        var content = container;
+        // 保存原始高度
+        var fullHeight = content.scrollHeight;
+        if (fullHeight > maxHeight) {
+          // 内容过高，应用折叠样式
+          content.style.maxHeight = maxHeight + 'px';
+          content.style.overflow = 'hidden';
+          content.style.transition = 'max-height 0.3s ease';
+          
+          // 创建展开按钮
+          var btn = document.createElement('button');
+          btn.textContent = '展开阅读全文 ▼';
+          btn.className = 'read-more-btn';
+          btn.style.display = 'block';
+          btn.style.margin = '15px auto 0';
+          btn.style.padding = '6px 18px';
+          btn.style.background = '#f5f5f5';
+          btn.style.border = '1px solid #ddd';
+          btn.style.borderRadius = '30px';
+          btn.style.cursor = 'pointer';
+          
+          var expanded = false;
+          btn.onclick = function() {
+            if (!expanded) {
+              content.style.maxHeight = content.scrollHeight + 'px';
+              btn.textContent = '收起内容 ▲';
+              expanded = true;
+            } else {
+              content.style.maxHeight = maxHeight + 'px';
+              btn.textContent = '展开阅读全文 ▼';
+              expanded = false;
+            }
+          };
+          content.parentNode.insertBefore(btn, content.nextSibling);
+        }
+      })();
+    </script>
+    
+  
+</div>
 
     <footer class="entry-meta">
     <a href="/2026/05/28/hello-world/">

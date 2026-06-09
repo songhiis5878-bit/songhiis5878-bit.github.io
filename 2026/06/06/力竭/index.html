@@ -90,13 +90,60 @@
       </header><!-- .entry-header -->
 
     <div class="entry-content">
-      
-        <p>我真的不会再去和别人谈对方的事情，说我自己的看法了。很不尊重别人，应该让当事人自己想怎么做就怎么做吧。</p>
+  
+    <div class="foldable-content" id="foldable-cmq1xxlv5000004ugdn8751zf">
+      <p>我真的不会再去和别人谈对方的事情，说我自己的看法了。很不尊重别人，应该让当事人自己想怎么做就怎么做吧。</p>
 <p>而且，我真的改不了和别人倾诉的这个毛病吗？还是少说些东西，面对空荡荡的回应只会觉得好可怕。</p>
 <p>语言太容易产生误解了 我才会执着于把话说清 人之间缘分太薄了 我真的想尽我所能减少误会</p>
 
-      
-    </div><!-- .entry-content -->
+    </div>
+    
+    <script>
+      (function() {
+        var container = document.getElementById('foldable-cmq1xxlv5000004ugdn8751zf');
+        if (!container) return;
+        // 设置默认显示的最大高度（例如 300px，可自行调整）
+        var maxHeight = 300;
+        var content = container;
+        // 保存原始高度
+        var fullHeight = content.scrollHeight;
+        if (fullHeight > maxHeight) {
+          // 内容过高，应用折叠样式
+          content.style.maxHeight = maxHeight + 'px';
+          content.style.overflow = 'hidden';
+          content.style.transition = 'max-height 0.3s ease';
+          
+          // 创建展开按钮
+          var btn = document.createElement('button');
+          btn.textContent = '展开阅读全文 ▼';
+          btn.className = 'read-more-btn';
+          btn.style.display = 'block';
+          btn.style.margin = '15px auto 0';
+          btn.style.padding = '6px 18px';
+          btn.style.background = '#f5f5f5';
+          btn.style.border = '1px solid #ddd';
+          btn.style.borderRadius = '30px';
+          btn.style.cursor = 'pointer';
+          
+          var expanded = false;
+          btn.onclick = function() {
+            if (!expanded) {
+              content.style.maxHeight = content.scrollHeight + 'px';
+              btn.textContent = '收起内容 ▲';
+              expanded = true;
+            } else {
+              content.style.maxHeight = maxHeight + 'px';
+              btn.textContent = '展开阅读全文 ▼';
+              expanded = false;
+            }
+          };
+          content.parentNode.insertBefore(btn, content.nextSibling);
+        }
+      })();
+    </script>
+    
+  
+</div>
 
     <footer class="entry-meta">
     <a href="/2026/06/06/%E5%8A%9B%E7%AB%AD/">
